@@ -6,19 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/style.css"/>
-    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
     <header>
-        <nav class="">
+        <nav class="row nav-style justify-content-center">
+            <h2>Weather Dashboard</h2>
         </nav>
     </header>
-    
+
     <main>
-        <div class="container">
+
+        <div class="row d-flex flex-row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card">
+                    <h3 class="card-header text-uppercase">Search for a City:</h3>
+                    <form class="form-group form-row col-12">
+                        <input name="city" id="city" type="text" autofocus="true" class="form-input"/>
+                    </form>
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+                </div>
+
+                <hr class="hr">
+
+                <div class="">
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 col-md-8">
+                <div class="row d-flex flex-row">
+                    <div class="col-sm-12 border border-danger">
+                        <h2 class="subtitle">Current Weather</h2>
+                        <p id="">City</p>
+                        <p id="">Temp</p>
+                        <p id="">Wind</p>
+                        <p id="">Humidity</p>
+                        <p id="">UV Index</p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 border border-danger">
+                        <h2 class="subtitle">5-Day Forecast:<span id="repo-search-term"></span></h2>
+                        <div id="repos-container" class="list-group"></div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="border border-danger">
+                        <p>Date</p>
+                        <p>Temp</p>
+                        <p>Wind</p>
+                        <p>Humidity</p>
+                    </div>
+
+                    <div class="border border-danger">
+                        <p>Date</p>
+                        <p>Temp</p>
+                        <p>Wind</p>
+                        <p>Humidity</p>
+                    </div>
+
+                    <div class="border border-danger">
+                        <p>Date</p>
+                        <p>Temp</p>
+                        <p>Wind</p>
+                        <p>Humidity</p>
+                    </div>
+
+                    <div class="border border-danger">
+                        <p>Date</p>
+                        <p>Temp</p>
+                        <p>Wind</p>
+                        <p>Humidity</p>
+                    </div>
+
+                    <div class="border border-danger">
+                        <p>Date</p>
+                        <p>Temp</p>
+                        <p>Wind</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

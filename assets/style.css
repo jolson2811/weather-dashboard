@@ -1,0 +1,16 @@
+.nav-style {
+    height: 50px;
+    font-size: large;
+    color: white;
+    text-align: center;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(119, 75, 170), rgb(36, 0, 121));
+}
+
+.hr {
+   
+}
+
+.form-input {
+    width: 100%;
+}
