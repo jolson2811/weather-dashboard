@@ -1,5 +1,5 @@
 function getWeather(searchInput) {
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&units=imperial&appid=" + config.weather;
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&units=imperial&appid=e61750891a4fdfde0e65aaf0535b7f1f";
 
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
@@ -7,7 +7,7 @@ function getWeather(searchInput) {
                 console.log(data)
                 var city = data.name;
 
-                var apiUrl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&units=imperial&appid=" + config.weather;
+                var apiUrl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&units=imperial&appid=e61750891a4fdfde0e65aaf0535b7f1f";
                 fetch(apiUrl2).then(function (response) {
                     if (response.ok) {
                         response.json().then(function (data) {
