@@ -2,7 +2,6 @@ function getWeather(searchInput) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&units=imperial&appid=" + config.weather;
 
     fetch(apiUrl).then(function (response) {
-        console.log("functionfired");
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data)
@@ -14,6 +13,7 @@ function getWeather(searchInput) {
                         response.json().then(function (data) {
                             console.log("apiCall2", data);
                             document.getElementById("current-name").innerText = "City: " + city;
+                            document.getElementById("current-icon").setAttribute("src", "http://openweathermap.org/img/w/"+ data.current.weather[0].icon +".png");
                             document.getElementById("current-temp").innerText = "Temp: " + data.current.temp;
                             document.getElementById("current-wind").innerText = "Wind: " + data.current.wind_speed + " MPH";
                             document.getElementById("current-humidity").innerText = "Humidity: " + data.current.humidity + " %";
@@ -38,6 +38,7 @@ function getWeather(searchInput) {
                                 tomorrow.setDate(tomorrow.getDate() + (i + 1));
                                 var setDate = tomorrow.toLocaleDateString();
                                 document.getElementById("f" + i + "-date").innerText = setDate;
+                                document.getElementById("f" + i + "-icon").setAttribute("src", "http://openweathermap.org/img/w/"+ data.daily[i].weather[0].icon +".png");
                                 document.getElementById("f" + i + "-temp").innerText = "Temp: " + data.daily[i].temp.day;
                                 document.getElementById("f" + i + "-wind").innerText = "Wind: " + data.daily[i].wind_speed + " MPH";
                                 document.getElementById("f" + i + "-humidity").innerText = "Humidity: " + data.daily[i].humidity + " %";
@@ -61,15 +62,46 @@ function getDate() {
 
 var colors = ["green", "yellow", "red"];
 
-
-function uvColor() {
-
+function getHistory() {
+    var history = JSON.parse(localStorage.getItem("history"));
+    console.log("history", history);
+    var html = "";
+    if (history) {
+        for (var i = 0; i < history.length; i++) {
+            html += '<div id="'+ history[i] + '" class="btn btn-block btn-secondary">' + history[i] + '</div>';
+            console.log(html);
+        }
+        $("#history").html(html);
+    } 
 }
+
+function saveCity(searchInput) {
+    var history = JSON.parse(localStorage.getItem("history"));
+    if (history) {
+        history.push(searchInput);
+    } else {
+        history = [];
+        history.push(searchInput);
+    }
+    localStorage.setItem("history", JSON.stringify(history));
+    getHistory();
+    console.log(history)
+}
+
+getHistory();
 
 $("#search").on("click", function () {
     var searchInput = document.querySelector("#city").value;
     console.log(searchInput);
 
     getWeather(searchInput);
+    getDate();
+    saveCity(searchInput);
+});
+
+$("#history").on("click", ".btn", function () {
+    var idString = "#" + this.id;
+    var textInput = $(idString).text();
+    getWeather(textInput);
     getDate();
 });

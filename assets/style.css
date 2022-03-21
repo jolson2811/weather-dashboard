@@ -14,3 +14,10 @@
 .form-input {
     width: 100%;
 }
+
+.forecast {
+    width: 15%;
+    padding: 10px;
+    background-color: rgb(70, 29, 165);
+    color: white;
+}

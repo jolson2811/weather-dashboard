@@ -24,7 +24,7 @@
                 <div class="card">
                     <h3 class="card-header text-uppercase">Search for a City:</h3>
                     <form class="form-group form-row col-12">
-                        <input name="city" id="city" type="text" autofocus="true" class="form-input"/>
+                        <input name="city" id="city" type="text" autofocus="true" class="form-input" />
                     </form>
                 </div>
                 <div class="">
@@ -33,7 +33,8 @@
 
                 <hr class="hr">
 
-                <div class="">
+                <div id="history">
+
 
                 </div>
 
@@ -41,10 +42,11 @@
 
             <div class="col-sm-12 col-md-8">
                 <div class="row d-flex flex-row">
-                    <div class="col-sm-12 border border-danger">
+                    <div class="col-sm-12 border border-secondary">
                         <h2 class="subtitle">Current Weather</h2>
                         <p id="current-date"></p>
                         <p id="current-name">City</p>
+                        <img id="current-icon" src="" width="50" height="50">
                         <p id="current-temp">Temp</p>
                         <p id="current-wind">Wind</p>
                         <p id="current-humidity">Humidity</p>
@@ -54,47 +56,52 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12 border border-danger">
+                    <div class="col-sm-12">
                         <h2 class="subtitle">5-Day Forecast:<span id="repo-search-term"></span></h2>
                         <div id="repos-container" class="list-group"></div>
                     </div>
                 </div>
 
-                <div class="d-flex flex-row justify-content-between">
-                    <div class="border border-danger">
+                <div class="d-flex flex-row justify-content-around">
+                    <div class="forecast">
                         <p id="f0-date"></p>
+                        <img id="f0-icon" src="" width="50" height="50">
                         <p id="f0-temp">Temp</p>
                         <p id="f0-wind">Wind</p>
                         <p id="f0-humidity">Humidity</p>
                         <p id="f0-uv">UV Index</p>
                     </div>
 
-                    <div class="border border-danger">
+                    <div class="forecast">
                         <p id="f1-date"></p>
+                        <img id="f1-icon" src="" width="50" height="50">
                         <p id="f1-temp">Temp</p>
                         <p id="f1-wind">Wind</p>
                         <p id="f1-humidity">Humidity</p>
                         <p id="f1-uv">UV Index</p>
                     </div>
 
-                    <div class="border border-danger">
+                    <div class="forecast">
                         <p id="f2-date"></p>
+                        <img id="f2-icon" src="" width="50" height="50">
                         <p id="f2-temp">Temp</p>
                         <p id="f2-wind">Wind</p>
                         <p id="f2-humidity">Humidity</p>
                         <p id="f2-uv">UV Index</p>
                     </div>
 
-                    <div class="border border-danger">
+                    <div class=" forecast">
                         <p id="f3-date"></p>
+                        <img id="f3-icon" src="" width="50" height="50">
                         <p id="f3-temp">Temp</p>
                         <p id="f3-wind">Wind</p>
                         <p id="f3-humidity">Humidity</p>
                         <p id="f3-uv">UV Index</p>
                     </div>
 
-                    <div class="border border-danger">
+                    <div class=" forecast">
                         <p id="f4-date"></p>
+                        <img id="f4-icon" src="" width="50" height="50">
                         <p id="f4-temp">Temp</p>
                         <p id="f4-wind">Wind</p>
                         <p id="f4-humidity">Humidity</p>
